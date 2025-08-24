@@ -1,7 +1,23 @@
 import "@/styles/style.sass";
-import { Lato, Open_Sans } from "next/font/google";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import { Lato, Open_Sans, Red_Hat_Display } from "next/font/google";
+import { Merriweather, Lora, Playfair_Display } from "next/font/google";
+
+const merriweather = Merriweather({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-merriweather",
+});
+const lora = Lora({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-lora",
+});
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-playfair",
+});
+
 const lato = Lato({
   subsets: ["latin"],
   weight: ["400", "700", "900"],
@@ -11,6 +27,10 @@ const lato = Lato({
 const opensans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-open-sans",
+});
+const redhatdisplay = Red_Hat_Display({
+  subsets: ["latin"],
+  variable: "--font-red-hat",
 });
 
 export const metadata = {
@@ -22,11 +42,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${opensans.className} ${opensans.variable} ${lato.variable}`}
+        className={` antialiased ${opensans.className}${redhatdisplay.variable} ${merriweather.variable} ${lora.variable} ${opensans.variable} ${lato.variable}  ${playfair.variable}`}
       >
-        <Header />
-        {children} 
-        <Footer />
+        {children}
       </body>
     </html>
   );

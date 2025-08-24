@@ -7,6 +7,7 @@ export const endpoints = {
   GET_FEATURED_BLOG: "/api/articles?populate=*&filters[isFeatured][$eq]=true",
   GET_NON_FEATURED_BLOG:
     "/api/articles?populate=*&filters[isFeatured][$eq]=false",
+  GET_ALL_PROJECTS: "/api/projects?populate=*",
 };
 
 export const apiendpoints = {
@@ -15,4 +16,6 @@ export const apiendpoints = {
     config.STRAPI_BACKEND_BASEURL + endpoints.GET_FEATURED_BLOG,
   GET_NON_FEATURED_BLOG_API:
     config.STRAPI_BACKEND_BASEURL + endpoints.GET_NON_FEATURED_BLOG,
+  GET_ALL_PROJECTS_API:
+    config.STRAPI_BACKEND_BASEURL + endpoints.GET_ALL_PROJECTS,
 };
